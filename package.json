@@ -1,0 +1,22 @@
+{
+  "name": "weather-application",
+  "version": "1.0.0",
+  "description": "This application uses weather-stack api to fetch current weather status of various locations",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/srivastavayushi/Weather-Application.git"
+  },
+  "author": "Ayushi Srivastava",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/srivastavayushi/Weather-Application/issues"
+  },
+  "homepage": "https://github.com/srivastavayushi/Weather-Application#readme",
+  "dependencies": {
+    "request": "^2.88.2"
+  }
+}
