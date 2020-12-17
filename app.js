@@ -22,10 +22,16 @@ request({ url: url, json: true }, (error, response) => {
 
 // Geocoding
 
-// const geoUrl =
-//   "https://api.mapbox.com/geocoding/v5/mapbox.places/Los%20Angeles.json?access_token=pk.eyJ1IjoiYXl1c2hpLXNyaXZhc3RhdmEiLCJhIjoiY2tpcGg0eDQyMTd5eDJxcGZuN2FxcWc2NyJ9.311oXRcaonPhtO0m_ez3RA&limit=1";
-// request({ url: geoUrl, json: true }, (error, response) => {
-//   const lattitude = response.body.features[0].center[1];
-//   const longitude = response.body.features[0].center[0];
-//   console.log("Lattitude : " + lattitude + " Longitude : " + longitude);
-// });
+const geoUrl =
+  "https://api.mapbox.com/geocoding/v5/mapbox.places/Los%20Angeles.json?access_token=pk.eyJ1IjoiYXl1c2hpLXNyaXZhc3RhdmEiLCJhIjoiY2tpcGg0eDQyMTd5eDJxcGZuN2FxcWc2NyJ9.311oXRcaonPhtO0m_ez3RA&limit=1";
+request({ url: geoUrl, json: true }, (error, response) => {
+  if (error) {
+    console.log("Unable to connect to internet");
+  } else if (response.body.features.length === 0) {
+    console.log("Unable to find location, try another search");
+  } else {
+    const lattitude = response.body.features[0].center[1];
+    const longitude = response.body.features[0].center[0];
+    console.log("Lattitude : " + lattitude + " Longitude : " + longitude);
+  }
+});
